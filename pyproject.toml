@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zt-airgap"
+version = "0.1.0"
+description = "Template for LLM pipelines on an air-gapped SageMaker: S3 contracts, Bedrock via proxy, verified module releases, numbers-in-Python analysis, S3 chat bridge, offline dashboard, run status"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Gioacchino Tortorici" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["sagemaker", "bedrock", "air-gapped", "llm", "s3", "template", "regulated"]
+
+[project.optional-dependencies]
+aws = ["boto3>=1.34"]
+notebook = ["pandas>=2.0"]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/Giotor84/zt-airgap"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
